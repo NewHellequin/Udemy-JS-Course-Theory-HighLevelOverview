@@ -24,13 +24,26 @@ function calcAge(birthYear) {
   const age = 2037 - birthYear;
 
   function printAge() {
-    const output = `You are ${age}, born in ${birthYear}`;
+    let output = `${firstName}, you are ${age}, born in ${birthYear}`;
     console.log(output);
 
     if (birthYear >= 1981 && birthYear <= 1996) {
+      var millenial = true;
+      const firstName = 'Steven'; // changed the name from the original as steven is in the current scope.
       const str = `Oh, and you're a millenial, ${firstName}`;
       console.log(str);
+
+      function add(a, b) {
+        return a + b;
+      }
+      // reassinging outer scopes variable.
+      output = 'NEW OUTPUT!';
+
+      // const output = 'NEW OUTPUT!'; makes a new variable
     }
+    console.log(millenial);
+    console.log(output);
+    //console.log(add(2, 3)); // can only be seen when strick mode is disabled!
   }
   printAge();
   return age;
